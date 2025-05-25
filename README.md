@@ -1,0 +1,5 @@
+-Redux bilan birgalikda qilamiz
+-Edit imkoniyatini qo'shamiz.
+-Qo'shilgandan keyin modalni yopiladigan qilamiz
+-O'chirsa confirmation qo'shamiz.
+-Fieldlarni ko'paytiramiz
