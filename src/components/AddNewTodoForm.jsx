@@ -14,7 +14,6 @@ import { RefreshCcw } from "lucide-react";
 import { validation } from "../lib/utils";
 import { toast } from "sonner";
 import { addTodo } from "../request";
-import { addData } from "../lib/redux-toolkit/slices/todo-slice";
 import { useDispatch } from "react-redux";
 import { setAddModal } from "../lib/redux-toolkit/slices/modal-slice";
 

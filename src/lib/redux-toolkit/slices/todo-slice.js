@@ -1,30 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  data: [],
+  loading: false,
+  error: null,
+};
+
 const todoSlice = createSlice({
   name: "todo",
-  initialState: {
-    data: [],
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     setLoading(state, action) {
       state.loading = action.payload;
     },
     setData(state, action) {
       state.data = action.payload;
-    },
-    addTodo(state, action) {
-      state.data.push(action.payload);
-    },
-    deleteTodo(state, action) {
-      state.data = state.data.filter(todo => todo.id !== action.payload);
+      state.error = null;
     },
     setError(state, action) {
       state.error = action.payload;
+      state.data = [];
     },
   },
 });
 
-export const { setLoading, setData, addTodo, deleteTodo, setError } = todoSlice.actions;
+export const { setLoading, setData, setError } = todoSlice.actions;
 export default todoSlice.reducer;

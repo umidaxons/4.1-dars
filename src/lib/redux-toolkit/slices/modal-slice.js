@@ -1,28 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  addModal: false,
+  loginErrorModal: false,  
+  loginFormModal: false,  
+};
+
 const modalSlice = createSlice({
   name: "modal",
-  initialState: {
-    addTodoOpen: false,
-    loginOpen: false,
-  },
+  initialState,
   reducers: {
-    openAddModal(state) {
-      state.addTodoOpen = true;
-      state.loginOpen = false;
+    setAddModal(state) {
+      state.addModal = !state.addModal;
     },
-    closeAddModal(state) {
-      state.addTodoOpen = false;
+    setLoginErrorModal(state) {
+      state.loginErrorModal = !state.loginErrorModal;
     },
-    openLoginModal(state) {
-      state.loginOpen = true;
-      state.addTodoOpen = false;
+    setLoginFormModal(state) {
+      state.loginFormModal = !state.loginFormModal;
     },
-    closeLoginModal(state) {
-      state.loginOpen = false;
-    },
+    closeAllModals(state) {
+      state.addModal = false;
+      state.loginErrorModal = false;
+      state.loginFormModal = false;
+    }
   },
 });
 
-export const { openAddModal, closeAddModal, openLoginModal, closeLoginModal } = modalSlice.actions;
+export const { setAddModal, setLoginErrorModal, setLoginFormModal, closeAllModals } = modalSlice.actions;
 export default modalSlice.reducer;
